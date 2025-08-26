@@ -10,6 +10,7 @@ float area1, pib1;
 int pontosTuristicos1;
 float densidade_populacional;
 float pib_per_capta;
+float superPoder1;
 
 char estado2;
 char codigo2 [10];
@@ -19,13 +20,14 @@ float area2, pib2;
 int pontosTuristicos2;
 float densidade_populacional2;
 float pib_per_capta2;
+float superPoder2;
 
 printf("\n=== Carta 1 ===\n");
 
 printf("Estado (A-H): ");
-scanf("%c", &estado1);
+scanf("%c", &estado1); 
 
-printf("Código da carta (ex:A01): ");
+printf("Código da carta (ex:A01):  ");
 scanf("%s", codigo1);
 
 printf("Nome da cidade: ");
@@ -45,6 +47,8 @@ scanf("%d", &pontosTuristicos1);
 
 pib_per_capta = pib1 / populacao1;
 densidade_populacional = area1 / populacao1;
+superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + densidade_populacional + pib_per_capta;
+
 
 
 printf("\n === Carta 2 ===\n");
@@ -53,13 +57,13 @@ printf("Estado (A-H): ");
 scanf("%c", &estado2);
 
 printf("Códfigo da carta (ex:A01): ");
-scanf("%[^\n]", codigo2);
+scanf("%s", codigo2);
 
 printf("Nome da cidade: ");
-scanf("%c", nome2);
+scanf(" %[^\n]", nome2);
 
 printf("Pupulação: ");
-scanf("%d", &populacao2);
+scanf(" %d", &populacao2);
 
 printf("Área (Km²): ");
 scanf("%f", &area2);
@@ -72,6 +76,8 @@ scanf("%d", &pontosTuristicos2);
 
 pib_per_capta2 = pib2 / populacao2;
 densidade_populacional2 = area2 / populacao2;
+superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + densidade_populacional2 + pib_per_capta2;
+
 
 printf("\n=== Carta 1 ===\n");
 printf("Estado: %c\n", estado1);
@@ -83,6 +89,9 @@ printf("PIB: %2.f \n", pib1);
 printf("Pontos Turísticos: %d\n", pontosTuristicos1);
 printf("Densidade Pupulacional: %.2f\n", densidade_populacional);
 printf("PIB per Capita: %.2f reais \n", pib_per_capta);
+printf("Super Poder: %f\n", superPoder1);
+
+
 
 printf("\n=== Carta 2 ===\n");
 printf("Estado: %c\n", estado2);
@@ -94,5 +103,11 @@ printf("PIB: %2.f \n", pib2);
 printf("Pontos Turísticos: %d\n", pontosTuristicos2);
 printf("Densidade Populacional: %.2f\n", densidade_populacional2);
 printf("PIB per Capta: %.2f reais \n", pib_per_capta2);
+printf("Super Poder: %f\n", superPoder2);
 
+
+
+
+
+return 0;
 }
